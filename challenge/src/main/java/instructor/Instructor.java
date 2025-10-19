@@ -28,32 +28,28 @@ public class Instructor extends Person {
     }
 
     // cleanEmployeeNumber():
-    public String cleanEmployeeNumber(){
-        String cleanNumber = "";
-
-        for (int i = 0; i < employeeNumber.length(); i++){
-            char c = employeeNumber.charAt(i);
-            if (c != ' '){
-                cleanNumber = cleanNumber + c;
-            }
-        }
-        return cleanNumber;
+    public String cleanEmployeeNumber() {
+        return employeeNumber == null ? "" : employeeNumber.replaceAll("\\s+", "");
     }
+
     // summaryLine()
-    public String summarryLine(){
-        return String.format("Instructor[employeeNumber=%s, lastName=%s, firstName=%s",
+    public String summaryLine(){
+        return String.format("Instructor[employeeNumber=%s, lastName=%s, firstName=%s]",
                 employeeNumber,secondName,firstName);
     }
+    
     // toCard
     public String toCard(){
         StringBuilder sb = new StringBuilder("Instructor \n ---------- \n");
-        sb.append("Employee # : " + employeeNumber + "\n");
-        sb.append("Name : " + secondName + ", " + firstName + "\n");
-        sb.append("Email : " + email + "\n");
-        sb.append("Phone : " + phone + "\n");
+        sb.append("Employee#: " + employeeNumber + "\n");
+        sb.append("Name: " + secondName + ", " + firstName + "\n");
+        sb.append("Email: " + email + "\n");
+        sb.append("Phone: " + phone + "\n");
+
 
         return sb.toString();
     }
+    
     // displayName():
     public String displayName(){
         StringBuilder sb = new StringBuilder();
