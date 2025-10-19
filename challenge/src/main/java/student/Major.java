@@ -29,7 +29,7 @@ public class Major {
     // Add a student to the major
     public void addStudent(Student s) {
         if (studentCount >= MAX_STUDENTS) {
-            System.out.println("⚠️ Cannot add more students to " + name + ". Capacity reached!");
+            System.out.println("Cannot add more students to " + name + ". Capacity reached!");
             return;
         }
         students[studentCount++] = s;
